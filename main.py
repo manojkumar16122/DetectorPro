@@ -16,6 +16,7 @@ import cv2
 import numpy as np
 import time
 import sys
+from PIL import Image
 
 def object_detection_video():
     #object_detection_video.has_beenCalled = True
@@ -349,43 +350,17 @@ def main():
     </style>
     """
     st.markdown(page_bg_img, unsafe_allow_html=True)
-    new_title = '<p style="font-size: 80px; color:blue">DETECTO</p>''<p style="font-size: 30px;">Welcome to The Object Detection App!</p>'
-    read_me_0 = st.markdown(new_title, unsafe_allow_html=True)
+    new_title = '<p style="font-size: 80px; color:red">DETECTOR PRO</p>''<p style="font-size: 30px;">Welcome You All to Our Object Detection Application!</p>'
+   
     read_me = st.markdown("""
     DETECTO App was built using Streamlit and OpenCV 
     to demonstrate YOLO Object detection in both videos(pre-recorded)
     & images, Also Some More Features Like Identify the Landmarks Of the world,Image Processing,Feature Detection
     This YOLO object Detection project can detect 80 objects(i.e classes)
-    in either a video or image. The full list of the classes can be found 
-    [here](https://raw.githubusercontent.com/Divyansh6799/Objectdetection-web-application/master/coco.names).
-
-    Select Option To Try Features in Sidebar which present On Left .....
-
-    Developed By [Divyansh Trivedi](https://divyanshtrivediportfolio.netlify.app/) 
-
-    Follow Us On:
-        [Github](https://github.com/Divyansh6799/) &
-        [Linkedin](https://www.linkedin.com/in/divyansh-trivedi-1551581bb/)
-        """
+    in either a video or image. """
     )
-    st.sidebar.title("DETECTO")
+    st.sidebar.title("DETECTOR PRO")
     choice  = st.sidebar.selectbox("Select Feature",("About","Object Detection(Image)","Object Detection(Video)","Landmark identification","Image Processing","Feature Detection"))
-    read=st.sidebar.markdown("""
-    DETECTO App was built using Streamlit and OpenCV 
-    to demonstrate YOLO Object detection in both videos(pre-recorded)
-    & images, Also Some More Features Like Identify the Landmarks Of the world,Image Processing,Feature Detection
-    This YOLO object Detection project can detect 80 objects(i.e classes)
-    in either a video or image. The full list of the classes can be found 
-    [here](https://raw.githubusercontent.com/Divyansh6799/Objectdetection-web-application/master/coco.names).
-
-    Select Option To Try Features in Sidebar which present On Left .....
-
-    Developed By [Divyansh Trivedi](https://divyanshtrivediportfolio.netlify.app/) 
-
-    Follow Us On:
-        [Github](https://github.com/Divyansh6799/) &
-        [Linkedin](https://www.linkedin.com/in/divyansh-trivedi-1551581bb/)
-        """
     )
     if choice == "Object Detection(Image)":
         #st.subheader("Object Detection")
