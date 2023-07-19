@@ -16,7 +16,6 @@ import cv2
 import numpy as np
 import time
 import sys
-from PIL import Image
 
 def object_detection_video():
     #object_detection_video.has_beenCalled = True
@@ -28,7 +27,7 @@ def object_detection_video():
     weights_path = "yolov3.weights"
     font_scale = 1
     thickness = 1
-    url = "https://raw.githubusercontent.com/Divyansh6799/Objectdetection-web-application/master/coco.names"
+    url = "https://github.com/manojkumar16122/DetectorPro/blob/main/coco.names"
     f = urllib.request.urlopen(url)
     labels = [line.decode('utf-8').strip() for  line in f]
     colors = np.random.randint(0, 255, size=(len(labels), 3), dtype="uint8")
@@ -324,7 +323,7 @@ def feature_detection():
 
 
 def main():
-    st.set_page_config(page_title="Detecto")
+    st.set_page_config(page_title="Detector Pro")
     page_bg_img = f"""
     <style>
     [data-testid="stAppViewContainer"] > .main {{
@@ -350,17 +349,22 @@ def main():
     </style>
     """
     st.markdown(page_bg_img, unsafe_allow_html=True)
-    new_title = '<p style="font-size: 80px; color:red">DETECTOR PRO</p>''<p style="font-size: 30px;">Welcome You All to Our Object Detection Application!</p>'
-   
+    new_title = '<p style="font-size: 80px; color:red">DETECTORPRO</p>''<p style="font-size: 30px;">Welcome to The Object Detection App!</p>'
+    read_me_0 = st.markdown(new_title, unsafe_allow_html=True)
     read_me = st.markdown("""
     DETECTO App was built using Streamlit and OpenCV 
     to demonstrate YOLO Object detection in both videos(pre-recorded)
     & images, Also Some More Features Like Identify the Landmarks Of the world,Image Processing,Feature Detection
-    This YOLO object Detection project can detect 80 objects(i.e classes)
-    in either a video or image. """
+    
+        """
     )
     st.sidebar.title("DETECTOR PRO")
     choice  = st.sidebar.selectbox("Select Feature",("About","Object Detection(Image)","Object Detection(Video)","Landmark identification","Image Processing","Feature Detection"))
+    read=st.sidebar.markdown("""
+    DETECTO App was built using Streamlit and OpenCV 
+    to demonstrate YOLO Object detection in both videos(pre-recorded)
+    & images, Also Some More Features Like Identify the Landmarks Of the world,Image Processing,Feature Detection.
+        """
     )
     if choice == "Object Detection(Image)":
         #st.subheader("Object Detection")
