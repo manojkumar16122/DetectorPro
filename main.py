@@ -372,21 +372,26 @@ def main():
         read_me.empty()
         #st.title('Object Detection')
         obj_detection_image()
+    import moviepy.editor as mp
+
     elif choice == "Object Detection(Video)":
         read_me_0.empty()
         read_me.empty()
-        #object_detection_video.has_beenCalled = False
+        # object_detection_video.has_beenCalled = False
         object_detection_video()
-        #if object_detection_video.has_beenCalled:
-        try:
-            clip = moviepy.VideoFileClip('detected_video.mp4')
-            clip.write_videofile("myvideo.mp4")
-            st_video = open('myvideo.mp4','rb')
+        # if object_detection_video.has_beenCalled:
+    try:
+        # Assuming object_detection_video saves the output video as 'detected_video.mp4'
+        clip = mp.VideoFileClip('detected_video.mp4')
+        clip.write_videofile("myvideo.mp4")
+
+        # Display the output video using Streamlit
+        with open('myvideo.mp4', 'rb') as st_video:
             video_bytes = st_video.read()
             st.video(video_bytes)
-            st.write("Detected Video") 
-        except OSError:
-            ''
+            st.write("Detected Video")
+    except OSError as e:
+        st.write("Error:", e)
 
     elif choice == "Landmark identification":
         read_me_0.empty()
