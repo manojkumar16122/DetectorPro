@@ -376,13 +376,6 @@ def main():
 
    ##############################################video
 
-        # Display the output video using Streamlit
-        with open('myvideo.mp4', 'rb') as st_video:
-            video_bytes = st_video.read()
-            st.video(video_bytes)
-            st.write("Detected Video")
-    except OSError as e:
-        st.write("Error:", e)
 
     elif choice == "Landmark identification":
         read_me_0.empty()
