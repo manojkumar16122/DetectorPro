@@ -374,16 +374,7 @@ def main():
         obj_detection_image()
     import moviepy.editor as mp
 
-    elif choice == "Object Detection(Video)":
-        read_me_0.empty()
-        read_me.empty()
-        # object_detection_video.has_beenCalled = False
-        object_detection_video()
-        # if object_detection_video.has_beenCalled:
-    try:
-        # Assuming object_detection_video saves the output video as 'detected_video.mp4'
-        clip = mp.VideoFileClip('detected_video.mp4')
-        clip.write_videofile("myvideo.mp4")
+   ##############################################video
 
         # Display the output video using Streamlit
         with open('myvideo.mp4', 'rb') as st_video:
